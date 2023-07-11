@@ -204,6 +204,4 @@ function deleteCustomer($customerParams) {
     }
 }
 
-}
-
 ?>
