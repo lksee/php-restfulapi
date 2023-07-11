@@ -1,6 +1,7 @@
 # PHP REST API CRUD 예제
-## 1. Database
-### 1.1. dbcon.php 수정
+## 1. 공통사항
+### 1.1. Database
+#### 1.1.1. dbcon.php 수정
 > 자신의 MySQL의 접속 정보를 입력합니다.
 - $host : 도메인명
 - $user : 계정
@@ -21,3 +22,36 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`name`, `email`, `phone`) 
 VALUES ('이름', '이메일@email.com', '01012345678');
 ```
+
+### 1.3. Structure
+#### 1.3.1. inc 폴더
+- dbcon.php에서는 Database인 MySQL에 대한 접속 정보와 객체를 생성하는 코드 작성
+
+#### 1.3.2. customers 폴더
+- customers 테이블에 대한 처리는 customers라는 폴더 내에서 파일 생성
+- function.php에서 데이터베이스에 대한 쿼리를 처리하는 함수를 작성하고 그 결과에 따른 HTTP Status Code를 분기하도록 작성.
+- Create, Read, Update, Delete에 대해서 각각 파일로 분기하여 작성
+
+
+### 1.4. Requests
+#### 1.4.1. Create
+- HTTP Method: POST
+- Path: /customers/create.php
+- Body
+```javascript
+{
+    'name': '성춘향',
+    'email': 'email@email.com',
+    'phone': '01012341234'
+}
+```
+
+
+## 2. Create
+## 3. Read
+### 3.1. HTTP Method: GET
+- GET 요청에 대해서만 응답하도록 작성
+
+
+## 4. Update
+## 5. Delete
