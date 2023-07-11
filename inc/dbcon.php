@@ -11,4 +11,7 @@ if(!$conn){
     die("Connection Failed: ".mysqli_connect_error());
 }
 
+// mysql language
+mysqli_query($conn, "SET NAMES utf8");
+
 ?>
