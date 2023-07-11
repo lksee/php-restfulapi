@@ -47,7 +47,6 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 
 
 ## 3. Read
-### 3.1. HTTP Method: GET
 - HTTP Method: GET
 - Path: /customers/read.php
 - Query Params
