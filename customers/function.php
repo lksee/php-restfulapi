@@ -136,10 +136,12 @@ function updateCustomer($customerInput, $customerParams) {
     global $conn;
 
     if (!isset($customerParams['id'])) {
-        return error422('Enter your customer id.');
-    } else {
+        return error422('Customer id not found in URL.');
+    } elseif ($customerParams['id'] == null) {
         return error422('Enter your customer id.');
     }
+
+    $customerId = mysqli_real_escape_string($conn, trim($customerParams['id']));
 
     $name = mysqli_real_escape_string($conn, trim($customerInput['name']));
     $email = mysqli_real_escape_string($conn, trim($customerInput['email']));

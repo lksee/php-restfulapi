@@ -11,7 +11,7 @@ include('function.php');
 
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if ($requestMethod == 'PUT ') {
+if ($requestMethod == 'PUT') {
 
     $inputData = json_decode(file_get_contents("php://input"), true);
     $updateCustomer = updateCustomer($inputData, $_GET);
