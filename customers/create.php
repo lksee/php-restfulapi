@@ -21,7 +21,7 @@ if ($requestMethod == 'POST') {
         $storeCustomer = storeCustomer($inputData);
     }
 
-    echo $inputData;
+    echo $storeCustomer;
 
 } else {
     $data = [
