@@ -50,6 +50,8 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 ### 3.1. HTTP Method: GET
 - HTTP Method: GET
 - Path: /customers/read.php
+- Query Params
+  - id : (Optional) customers 테이블의 PK인 id를 활용하여 1개의 데이터 조회
 
 
 ## 4. Update
