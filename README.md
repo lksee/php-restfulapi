@@ -54,4 +54,17 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 
 
 ## 4. Update
+- HTTP Method: PUT
+- Path: /customers/update.php
+- Query Params
+  - id : (Required) customers 테이블의 PK인 id를 활용하여 1개의 데이터 조회
+- Body
+  ```javascript
+  {
+      'name': '성춘향',
+      'email': 'email@email.com',
+      'phone': '01012341234'
+  }
+  ```
+
 ## 5. Delete

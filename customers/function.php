@@ -132,4 +132,45 @@ function getCustomer($customerParams) {
     }
 }
 
+function updateCustomer($customerInput, $customerParams) {
+    global $conn;
+
+    if (!isset($customerParams['id'])) {
+        return error422('Enter your customer id.');
+    } else {
+        return error422('Enter your customer id.');
+    }
+
+    $name = mysqli_real_escape_string($conn, trim($customerInput['name']));
+    $email = mysqli_real_escape_string($conn, trim($customerInput['email']));
+    $phone = mysqli_real_escape_string($conn, trim($customerInput['phone']));
+
+    if (empty($name)) {
+        return error422('Enter your name');
+    } elseif (empty($email)) {
+        return error422('Enter your email');
+    } elseif (empty($phone)) {
+        return error422('Enter your phone number');
+    } else {
+        $query = "UPDATE customers SET name = '$name', email = '$email', phone = '$phone' WHERE id = '$customerId' LIMIT 1";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            $data = [
+                'status' => 200,
+                'message' => 'Customer Updated Successfully',
+            ];
+            header('HTTP/1.0 200 OK');
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Server Error',
+            ];
+            header('HTTP/1.0 500 Internal Server Error');
+            return json_encode($data);
+        }
+    }
+}
+
 ?>
