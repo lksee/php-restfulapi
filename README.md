@@ -39,9 +39,9 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 - Body
   ```javascript
   {
-      'name': '성춘향',
-      'email': 'email@email.com',
-      'phone': '01012341234'
+      "name": "성춘향",
+      "email": "email@email.com",
+      "phone": "01012341234"
   }
   ```
 
@@ -61,9 +61,9 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 - Body
   ```javascript
   {
-      'name': '성춘향',
-      'email': 'email@email.com',
-      'phone': '01012341234'
+      "name": "성춘향",
+      "email": "email@email.com",
+      "phone": "01012341234"
   }
   ```
 
