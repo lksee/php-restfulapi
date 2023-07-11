@@ -9,7 +9,7 @@ include('function.php');
 
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if($requestMethod != 'GET'){
+if($requestMethod == 'GET'){
     $customerList = getCustomerList();
     echo $customerList;
 } else {
