@@ -173,4 +173,37 @@ function updateCustomer($customerInput, $customerParams) {
     }
 }
 
+function deleteCustomer($customerParams) {
+    global $conn;
+
+    if (!isset($customerParams['id'])) {
+        return error422('Customer id not found in URL.');
+    } elseif ($customerParams['id'] == null) {
+        return error422('Enter your customer id.');
+    }
+
+    $customerId = mysqli_real_escape_string($conn, trim($customerParams['id']));
+
+    $query = "DELETE FROM customers WHERE id = '$customerId' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+
+    if ($result) {
+        $data = [
+            'status' => 200,
+            'message' => 'Customer Deleted Successfully',
+        ];
+        header('HTTP/1.0 200 OK');
+        return json_encode($data);
+    } else {
+        $data = [
+            'status' => 404,
+            'message' => 'Customer Not Found',
+        ];
+        header('HTTP/1.0 404 Not Found');
+        return json_encode($data);
+    }
+}
+
+}
+
 ?>
