@@ -33,24 +33,23 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 - Create, Read, Update, Delete에 대해서 각각 파일로 분기하여 작성
 
 
-### 1.4. Requests
-#### 1.4.1. Create
+## 2. Create
 - HTTP Method: POST
 - Path: /customers/create.php
 - Body
-```javascript
-{
-    'name': '성춘향',
-    'email': 'email@email.com',
-    'phone': '01012341234'
-}
-```
+  ```javascript
+  {
+      'name': '성춘향',
+      'email': 'email@email.com',
+      'phone': '01012341234'
+  }
+  ```
 
 
-## 2. Create
 ## 3. Read
 ### 3.1. HTTP Method: GET
-- GET 요청에 대해서만 응답하도록 작성
+- HTTP Method: GET
+- Path: /customers/read.php
 
 
 ## 4. Update
