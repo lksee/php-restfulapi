@@ -1,4 +1,11 @@
 # PHP REST API CRUD 예제
+
+## 목적
+> 월 1,000원이라는 저렴한 비용으로 간단한 홈페이지 구성 가능한 hosting.kr의 리눅스 웹호스팅 적극 활용
+> 가격도 저렴하지만 이 웹호스팅은 Apache, php, MySQL도 사용이 가능
+> php로 최소한의 RESTful API 방식 구현하여 DB도 적극활용
+
+
 ## 1. 공통사항
 ### 1.1. Database
 #### 1.1.1. dbcon.php 수정
@@ -31,7 +38,6 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 - customers 테이블에 대한 처리는 customers라는 폴더 내에서 파일 생성
 - function.php에서 데이터베이스에 대한 쿼리를 처리하는 함수를 작성하고 그 결과에 따른 HTTP Status Code를 분기하도록 작성.
 - Create, Read, Update, Delete에 대해서 각각 파일로 분기하여 작성
-
 
 ### 1.4. IP Access control
 - 허용된 IP가 아닌 경우 접근 제한하는 기능을 추가([inc/access_control_function.php](https://github.com/lksee/php-restfulapi/blob/main/inc/access_control_functions.php))
