@@ -9,17 +9,29 @@ include('function.php');
 
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if($requestMethod == 'DELETE'){
+require_once '../inc/access_control_functions.php';
 
-        $deleteCustomer = deleteCustomer($_GET);
-        echo $deleteCustomer;
-    
+if (checkIPAccess()) {
+    if($requestMethod == 'DELETE'){
+
+            $deleteCustomer = deleteCustomer($_GET);
+            echo $deleteCustomer;
+        
+    } else {
+        $data = [
+            'status' => 405,
+            'message' => $requestMethod. ' method not allowed',
+        ];
+        header('HTTP/1.0 405 Method Not Allowed');
+        echo json_encode($data);
+    }
 } else {
     $data = [
-        'status' => 405,
-        'message' => $requestMethod. ' method not allowed',
+        'status' => 403,
+        'message' => 'Access Forbidden',
     ];
-    header('HTTP/1.0 405 Method Not Allowed');
+    header('HTTP/1.0 403 Forbidden');
     echo json_encode($data);
 }
+
 ?>
