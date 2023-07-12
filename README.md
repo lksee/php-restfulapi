@@ -33,6 +33,10 @@ VALUES ('이름', '이메일@email.com', '01012345678');
 - Create, Read, Update, Delete에 대해서 각각 파일로 분기하여 작성
 
 
+### 1.4. IP Access control
+- 허용된 IP가 아닌 경우 접근 제한하는 기능을 추가([inc/access_control_function.php](https://github.com/lksee/php-restfulapi/blob/main/inc/access_control_functions.php))
+- 하나의 모듈에서 접근 가능한 IP를 관리하도록 구현, 즉 이 모듈을 사용하면 일편적으로 허용 IP 범위가 적용(각 URL별 유연한 IP 접근제한보다 한 곳에서 IP를 관리하기 더 쉽게 하기 위함)
+
 ## 2. Create
 - HTTP Method: POST
 - Path: /customers/create.php
